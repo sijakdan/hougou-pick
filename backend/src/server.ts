@@ -5,10 +5,12 @@ const fastify = Fastify({ logger: false });
 
 async function main() {
   fastify.get("/", healthHandler);
+  const port =
+    process.env.PORT == undefined ? 3000 : parseInt(process.env.PORT);
 
-  await fastify.listen({ port: 3000 });
+  await fastify.listen({ port });
 
-  console.log("Server is running on port 3000 http://localhost:3000");
+  console.log(`Server is running on port ${port} http://localhost:${port}`);
 }
 
 main().catch((err) => {
