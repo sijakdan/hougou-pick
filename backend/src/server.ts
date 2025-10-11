@@ -2,11 +2,18 @@ import Fastify from "fastify";
 import { healthHandler } from "./handlers/health";
 
 const fastify = Fastify({ logger: false });
+const { PORT = "", APIPREFIX = "" } = process.env;
+const port = PORT === "" ? 3000 : parseInt(PORT);
+const apiPrefix = APIPREFIX === "" ? "/hougou-pick" : APIPREFIX;
 
 async function main() {
-  fastify.get("/", healthHandler);
-  const port =
-    process.env.PORT == undefined ? 3000 : parseInt(process.env.PORT);
+  fastify.register(
+    async function (router) {
+      router.get("/", healthHandler);
+      router.get("/health", healthHandler);
+    },
+    { prefix: apiPrefix }
+  );
 
   await fastify.listen({ port });
 
