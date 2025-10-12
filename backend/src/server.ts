@@ -15,7 +15,10 @@ async function main() {
     { prefix: apiPrefix }
   );
 
-  await fastify.listen({ port });
+  await fastify.listen({
+    port,
+    host: "0.0.0.0",
+  });
 
   console.log(`Server is running on port ${port} http://localhost:${port}`);
 }
