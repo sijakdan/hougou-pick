@@ -3,13 +3,13 @@
 set -e
 
 # The initial version
-if [ ! -f .env ]
+if [ ! -f ./database/.env ]
 then
-  export $(cat .env | xargs)
+  export $(cat ./database/.env | xargs)
 fi
 
 # My favorite from the comments. Thanks @richarddewit & others!
-set -a && source .env && set +a
+set -a && source ./database/.env && set +a
 
 PORT=4003
 LABEL=$1
