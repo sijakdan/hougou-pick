@@ -1,0 +1,9 @@
+{
+    "name": "database",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+      "deploy": "../scripts/restart.sh huoguo-pick-database 1 1g"
+    }
+  }
+  
