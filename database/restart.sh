@@ -26,7 +26,7 @@ docker run -d \
   -e POSTGRES_USER=$POSTGRES_USER \
   -e POSTGRES_PASSWORD=$POSTGRES_PASSWORD \
   -e POSTGRES_DB=$POSTGRES_DB \
-  -p $PORT:$PORT \
+  -p $PORT:5432 \
   --cpus="$CPUS" --memory="$MEMORY" \
   -v ./database/pgdata:/var/lib/postgresql/data \
   --health-cmd='pg_isready -U app' --health-interval=10s --health-timeout=5s --health-retries=5 \
