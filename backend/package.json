@@ -4,7 +4,8 @@
     "private": true,
     "scripts": {
         "dev": "tsx watch src/server.ts",
-        "start": "tsx src/server.ts"
+        "start": "tsx src/server.ts",
+        "deploy": "../scripts/deploy.sh huoguo-pick-server"
     },
     "dependencies": {
         "fastify": "^5.6.1",
