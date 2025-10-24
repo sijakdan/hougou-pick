@@ -3,7 +3,8 @@
   "packageManager": "yarn@4.10.3",
   "workspaces": [
     "backend",
-    "frontend"
+    "frontend",
+    "database"
   ],
   "devDependencies": {
     "typescript": "^5.9.3"
